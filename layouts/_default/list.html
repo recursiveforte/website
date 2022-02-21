@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main>
+    <div class="main" style="clear: both; position: relative; margin:auto;">
+        <div class="box">
+        <header>
+            <h1>{{.Title}}</h1>
+        </header>
+        <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+        {{.Content}}
+    <ul>
+        <!-- Ranges through content/posts/*.md -->
+        {{ range .Pages }}
+        <li>
+            <a href="{{.Permalink}}">{{.Title}} [{{.Date.Format "Jan 2, 2006"}}]</a>
+        </li>
+        {{ end }}
+    </ul>
+        </div>
+    </div>
+</main>
+{{ end }}

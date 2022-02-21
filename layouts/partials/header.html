@@ -1,0 +1,11 @@
+<div class="top">
+    <div class="box" style="float: left;">
+        <a href="/" style="color:black; font-weight: bolder;"><p>{{.Site.Title}}</p></a>
+    </div>
+    <div class="box" style="float: left;">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" style="float: left;color: black;padding-left: 5px; padding-right: 5px;"><p>[{{ .Name }}]</p></a>
+        {{ end }}
+    </div>
+</div>

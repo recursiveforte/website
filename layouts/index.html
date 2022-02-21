@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{{ partial "partials/head.html" . }}
+{{ partial "partials/header.html" . }}
+
+<div class="main" style="clear: both; position: relative; margin:auto;">
+    {{ $cols := split .RawContent "[split]"}}
+
+    {{ range $cols }}
+    <div class="box">
+        {{ . | markdownify }}
+    </div>
+    {{ end }}
+</div>
+
+{{ partial "partials/footer.html" . }}

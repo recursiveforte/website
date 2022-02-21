@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+    <div class="main" style="clear: both; position: relative; margin:auto;">
+        <div class="box">
+    <h1 id="title">{{ .Title }}</h1>
+    <h4 id="date"> {{ .Date.Format "Monday Jan 2, 2006" }} </h4>
+        </div>
+        <article>    <div class="box">
+            {{ .Content }}
+        </div></article>
+
+    </div>
+<!-- <aside id="meta">
+    <div>
+        {{ with .Params.topics }}
+        <ul id="topics">
+            {{ range . }}
+            <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+        {{ with .Params.tags }}
+        <ul id="tags">
+            {{ range . }}
+            <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+    <div>
+        {{ with .PrevInSection }}
+        <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+        <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+        {{ end }}
+    </div>
+</aside>
+-->
+{{ end }}
